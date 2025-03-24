@@ -1,10 +1,10 @@
 import selenium.webdriver as webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, WebDriverException
 import random
 import time
-from bs4 import BeautifulSoup
-import pandas as pd
-import matplotlib.pyplot as plt
 
 user_agents = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -12,7 +12,7 @@ user_agents = [
 ]
 
 # Function to create Selenium driver
-def create_driver(path):
+def create_driver():
     try:
         options = webdriver.ChromeOptions()
         options.add_argument('--disable-blink-features=AutomationControlled')
@@ -21,85 +21,42 @@ def create_driver(path):
         options.add_argument('--disable-notifications')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--no-sandbox')
-        options.add_argument("--enable-save-page-as-mhtml") 
-        # options.add_argument('--headless=new')
         driver = webdriver.Chrome(options=options)
-        print("Driver created successfully")
+        print("✅ Driver created successfully")
         return driver
-    except Exception as e:
-        print(f"Error creating driver: {e}")
+    except WebDriverException as e:
+        print(f"🚫 Error creating driver: {e}")
 
-# Function to download HTML
-def download_page(url, driver_path):
-    driver = create_driver(driver_path)
+# Function to download entire HTML and save
+def download_full_html(driver):
     try:
-        driver.get(url)
-        time.sleep(10) 
-        html = driver.page_source
-        with open("barchart_page.mhtml", "wb") as file:
-            file.write(driver.page_source.encode("utf-8"))
-        print("Page downloaded successfully")
+        # Wait until the element with id='_root' is present
+        print("⏳ Waiting for page to load...")
+        WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.ID, "_root"))
+        )
+        time.sleep(random.randint(5, 10))  # Random delay to avoid bot detection
+        full_page_html = driver.page_source
+        with open('full_page.html', 'w', encoding='utf-8') as file:
+            file.write(full_page_html)
+        print("✅ Full page HTML saved successfully.")
+    except TimeoutException:
+        print("⏰ Timeout Error: '_root' element not found.")
+    except WebDriverException as e:
+        print(f"🚫 WebDriverException: {e}")
     except Exception as e:
-        print(f"Error downloading page: {e}")
-    finally:
-        if driver:
-            driver.quit()
-
-# Function to extract data from HTML
-def extract_data(file_path):
-    with open(file_path, "r", encoding="utf-8") as file:
-        soup = BeautifulSoup(file, "html.parser")
-
-    # Locate the table
-    table = soup.find("table", {"class": "bc-table-scrollable"})
-    data = []
-    headers = [header.text for header in table.find_all("th")]
-
-    for row in table.find_all("tr", class_="bc-table-row"):
-        cols = row.find_all("td")
-        if cols:
-            data.append([col.text.strip().replace(',', '') for col in cols])
-
-    df = pd.DataFrame(data, columns=headers)
-    return df
-
-# Data analysis function
-def perform_analysis(df):
-    # Convert columns to numeric where necessary
-    df['High'] = pd.to_numeric(df['High'], errors='coerce')
-    df['Low'] = pd.to_numeric(df['Low'], errors='coerce')
-    df['Change'] = pd.to_numeric(df['Change'], errors='coerce')
-
-    # Create 'Mean' column
-    df['Mean'] = (df['High'] + df['Low']) / 2
-
-    # Plot the data
-    plt.figure(figsize=(14, 6))
-    plt.plot(df['High'], label='High', color='blue')
-    plt.plot(df['Low'], label='Low', color='red')
-    plt.plot(df['Mean'], label='Mean', color='green', linestyle='--')
-    plt.title('High, Low and Mean of Futures Market')
-    plt.xlabel('Index')
-    plt.ylabel('Value')
-    plt.legend()
-    plt.show()
-
-    # Find row with largest 'Change'
-    max_change_row = df.loc[df['Change'].idxmax()]
-    print(f"Contract with largest change: {max_change_row['Contract Name']}")
-    print(f"Last: {max_change_row['Last']}")
-
-    # Save to Excel
-    with pd.ExcelWriter('futures_data.xlsx', engine='openpyxl') as writer:
-        df.to_excel(writer, sheet_name='Raw Data', index=False)
+        print(f"⚠️ Unexpected Error: {e}")
 
 # Execution steps
-driver_path = '/path/to/chromedriver'  # Change to actual path
 url = 'https://www.barchart.com/futures'
 
-# Step 1: Download page
-download_page(url, driver_path)
-
-# Step 2: Extract and analyze data
-df = extract_data('futures_market.html')
-perform_analysis(df)
+driver = create_driver()
+if driver:
+    try:
+        driver.get(url)
+        download_full_html(driver)
+    finally:
+        driver.quit()
+        print("🚪 Driver closed.")
+else:
+    print("⚠️ Failed to create WebDriver.")

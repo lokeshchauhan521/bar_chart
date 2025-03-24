@@ -1,0 +1,837 @@
+<div id="_root" class="_root" part="root" role="grid">
+    <div class="_grid_groups">
+        <div class="_header _header_group _hide">
+            <div class="_header_group_cell _align_center" style="--header-transform: translateY(0px);"></div>
+        </div>
+    </div>
+    <div id="_grid" class="_grid" part="grid" tabindex="0" role="presentation" noselectablecolumns="">
+        <div class="_header _grid_columns _sticky_main_header" role="row">
+            <div class="_header_cell" role="columnheader" style="--header-transform: translateY(0px);"><span
+                    class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip" data-tooltip="A shortened version of the symbol name.">
+                            Contract Name
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_right" role="columnheader" style="--header-transform: translateY(0px);">
+                <span class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip" data-tooltip="The last trade price.">
+                            Last
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_right" role="columnheader" style="--header-transform: translateY(0px);">
+                <span class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip"
+                            data-tooltip="The difference between the current price and the previous day's settlement price.">
+                            Change
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_right" role="columnheader" style="--header-transform: translateY(0px);">
+                <span class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip" data-tooltip="The highest trade price for the day.">
+                            High
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_right" role="columnheader" style="--header-transform: translateY(0px);">
+                <span class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip" data-tooltip="The lowest trade price for the day.">
+                            Low
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_right" role="columnheader" style="--header-transform: translateY(0px);">
+                <span class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip"
+                            data-tooltip="The total number of shares or contracts traded for the day.">
+                            Volume
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_right" role="columnheader" style="--header-transform: translateY(0px);">
+                <span class="_sortable-cell" style="display: inline-flex;">
+                    <div class="bc-datatable-header">
+                        <div class="bc-datatable-header-tooltip" data-tooltip="The trade time.">
+                            Time
+                        </div>
+                        <if-binding binding="this.sort.active" class="grid-sort-icon-wrapper">
+                            <switch-binding slot="on-true" binding="this.sort.direction">
+                                <template id="_default">
+                                    <div class="grid-sort-icon-size-preserver" part="sort-default"></div>
+                                    <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="asc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 402.286c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z">
+                                        </path>
+                                    </svg>
+                                </template>
+                                <template id="desc">
+                                    <div class="grid-sort-icon-size-preserver"></div>
+                                    <svg class="grid-sort-icon" viewBox="0 0 585.143 1024">
+                                        <path
+                                            d="M585.143 621.714c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z">
+                                        </path>
+                                    </svg>
+                                </template>
+
+                                <div class="grid-sort-icon-size-preserver" part="sort-default" slot="__content"></div>
+                                <svg class="grid-sort-icon _hide" viewBox="0 0 585.143 1024" slot="__content">
+                                    <path
+                                        d="m585.143,621.714c0,9.714 -4,18.857 -10.857,25.714l-256,256c-6.857,6.857 -16,10.857 -25.714,10.857s-18.857,-4 -25.714,-10.857l-256,-256c-6.857,-6.857 -10.857,-16 -10.857,-25.714c0,-20 16.571,-36.571 36.571,-36.571l512,0c20,0 36.571,16.571 36.571,36.571zm0,-219.428c0,20 -16.571,36.571 -36.571,36.571l-512,0c-20,0 -36.571,-16.571 -36.571,-36.571c0,-9.714 4,-18.857 10.857,-25.714l256,-256c6.857,-6.857 16,-10.857 25.714,-10.857s18.857,4 25.714,10.857l256,256c6.857,6.857 10.857,16 10.857,25.714z">
+                                    </path>
+                                </svg>
+                            </switch-binding>
+                        </if-binding>
+                    </div>
+                </span></div>
+            <div class="_header_cell _align_center" role="columnheader" style="--header-transform: translateY(0px);">
+                <div class="bc-datatable-header">
+                    <div class="bc-datatable-header-tooltip" data-tooltip="">
+                        Links
+                    </div>
+                </div>
+            </div>
+        </div><set-class class="row _grid_columns selected" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName selected" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/ESM25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice down-highlight" role="cell" draggable="true" tabindex="0">
+                <set-class binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up down-highlight" role="cell" draggable="true" tabindex="0">
+                <set-class binding="this.flags.priceChange" target=".."></set-class><text-binding
+                    fallbackvalue="&hairsp;" binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/NQM25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up up-highlight" role="cell" draggable="true" tabindex="0">
+                <set-class binding="this.flags.priceChange" target=".."></set-class><text-binding
+                    fallbackvalue="&hairsp;" binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/YMM25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up up-highlight" role="cell" draggable="true" tabindex="0">
+                <set-class binding="this.flags.priceChange" target=".."></set-class><text-binding
+                    fallbackvalue="&hairsp;" binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/VIJ25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/DXM25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/ZNM25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/CLK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/NGK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/GCJ25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/SIK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/ZCK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/ZWK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/ZSK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up-highlight unch" role="cell" draggable="true" tabindex="0">
+                <set-class binding="this.flags.priceChange" target=".."></set-class><text-binding
+                    fallbackvalue="&hairsp;" binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume up-highlight" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/SBK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange down" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/KCK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class><set-class class="row _grid_columns" role="row" target="." binding="this.rowClass">
+            <div class="_cell contractName" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.contractName" target=".."></set-class><a href="/futures/quotes/CCK25/overview">
+                    <set-property target=".." binding="this['contractNameLink']" property="href"
+                        style="display: none;"></set-property>
+                    <text-binding binding="this.contractName"></text-binding>
+                </a></div>
+            <div class="_cell _align_right lastPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lastPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lastPrice"></text-binding></div>
+            <div class="_cell _align_right priceChange up" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.priceChange" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.priceChange"></text-binding></div>
+            <div class="_cell _align_right highPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.highPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.highPrice"></text-binding></div>
+            <div class="_cell _align_right lowPrice" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.lowPrice" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.lowPrice"></text-binding></div>
+            <div class="_cell _align_right volume" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.volume" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.volume"></text-binding></div>
+            <div class="_cell _align_right tradeTime" role="cell" draggable="true" tabindex="0"><set-class
+                    binding="this.flags.tradeTime" target=".."></set-class><text-binding fallbackvalue="&hairsp;"
+                    binding="this.tradeTime"></text-binding></div>
+            <div class="_cell _align_center" role="cell" draggable="true" tabindex="0"><set-class binding="this.flags."
+                    target=".."></set-class>
+                <div class="bc-datatable-quicklinks-toggler">
+                    <i class="bc-glyph-ellipsis-v bc-datatable-quicklinks-toggler-open"></i>
+                    <i class="bc-glyph-times bc-datatable-quicklinks-toggler-close"></i>
+                </div>
+            </div>
+        </set-class>
+    </div>
+    <div>
+        <link rel="stylesheet" type="text/css" href="https://assets.barchart.com/fonts/barfont.1575916156.css?4s3ylr">
+        <link rel="stylesheet" id="sheet" href="https://assets.barchart.com/build/datatable-QA4XNBQ5.css">
+    </div>
+</div>
