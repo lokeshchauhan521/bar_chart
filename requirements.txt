@@ -3,3 +3,5 @@ pandas
 matplotlib
 openpyxl
 beautifulsoup4
+webdriver-manager
+undetected_chromedriver
