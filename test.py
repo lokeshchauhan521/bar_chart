@@ -21,6 +21,7 @@ def create_driver(path):
         options.add_argument('--disable-notifications')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--no-sandbox')
+        options.add_argument("--enable-save-page-as-mhtml") 
         # options.add_argument('--headless=new')
         driver = webdriver.Chrome(options=options)
         print("Driver created successfully")
@@ -35,8 +36,8 @@ def download_page(url, driver_path):
         driver.get(url)
         time.sleep(10) 
         html = driver.page_source
-        with open("futures_market.html", "w", encoding="utf-8") as file:
-            file.write(html)
+        with open("barchart_page.mhtml", "wb") as file:
+            file.write(driver.page_source.encode("utf-8"))
         print("Page downloaded successfully")
     except Exception as e:
         print(f"Error downloading page: {e}")
